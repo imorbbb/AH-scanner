@@ -1,0 +1,34 @@
+name: Daily Market Scanner Core
+
+on:
+  schedule:
+    # Triggers every Monday through Friday at 11:30 AM UTC (7:30 AM EST)
+    - cron: '30 11 * * 1-5'
+  workflow_dispatch: # Gives you a manual button on GitHub to click and test it instantly
+
+permissions:
+  contents: write # Grants the cloud server permission to save data back into your data.js file
+
+jobs:
+  refresh-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Market Data Extraction
+        run: |
+          python scanner.py
+
+      - name: Commit and Push fresh data.js to live site
+        run: |
+          git config --global user.name "Automated Scanner"
+          git config --global user.email "actions@github.com"
+          git add data.js
+          git commit -m "Automated Morning Data Refresh" || exit 0
+          git push
