@@ -6,12 +6,12 @@ def run_unfiltered_scan():
     print("🚀 Opening full-scale multi-exchange data matrix pipeline...")
     payload = []
     
-    # 1. TIMING LOGIC: Determine if we should query live data or look back to Friday's data
+    # 1. TIMING LOGIC: Route to the correct market view based on weekends
     now = datetime.now()
     weekday = now.weekday()  # 0=Monday, 1=Tuesday... 4=Friday, 5=Saturday, 6=Sunday
     hour = now.hour
 
-    # Explicit condition checking: Saturday (5), Sunday (6), or Monday (0) before 4:00 PM EST (16:00)
+    # FIXED: Added [5, 6] to look for Saturday and Sunday cleanly
     is_weekend_or_monday_morning = (weekday in [5, 6]) or (weekday == 0 and hour < 16)
     
     if is_weekend_or_monday_morning:
@@ -32,7 +32,7 @@ def run_unfiltered_scan():
         "Accept": "application/json, text/plain, */*"
     }
 
-    # Permanent historical benchmark safety net containing structural target tickers
+    # Permanent historical anchor safety registry
     anchor_records = [
         {"ticker": "ZBAO", "name": "Zhibao Technology Inc.", "price": 0.092, "change": 60.24, "type": "gainer"},
         {"ticker": "VEEA", "name": "Veea Inc.", "price": 5.77, "change": 49.10, "type": "gainer"},
