@@ -1,6 +1,6 @@
 import json
 import urllib.request
-from datetime import datetime, timedelta
+from datetime import datetime
 
 def run_unfiltered_scan():
     print("🚀 Opening full-scale multi-exchange data matrix pipeline...")
@@ -11,12 +11,11 @@ def run_unfiltered_scan():
     weekday = now.weekday()  # 0=Monday, 1=Tuesday... 4=Friday, 5=Saturday, 6=Sunday
     hour = now.hour
 
-    # If it is Saturday, Sunday, or Monday before after-hours begins (4 PM / 16:00), pull Friday's data
+    # Explicit condition checking: Saturday (5), Sunday (6), or Monday (0) before 4:00 PM EST (16:00)
     is_weekend_or_monday_morning = (weekday in [5, 6]) or (weekday == 0 and hour < 16)
     
     if is_weekend_or_monday_morning:
         print("📅 Weekend/Monday Morning window detected. Routing explicitly to Friday's final logs...")
-        # Target the historical screener endpoints representing the last fully closed extended session
         urls = {
             "gainer": "https://stockanalysis.com",
             "loser": "https://stockanalysis.com"
@@ -33,7 +32,7 @@ def run_unfiltered_scan():
         "Accept": "application/json, text/plain, */*"
     }
 
-    # Permanent historical benchmark safety net
+    # Permanent historical benchmark safety net containing structural target tickers
     anchor_records = [
         {"ticker": "ZBAO", "name": "Zhibao Technology Inc.", "price": 0.092, "change": 60.24, "type": "gainer"},
         {"ticker": "VEEA", "name": "Veea Inc.", "price": 5.77, "change": 49.10, "type": "gainer"},
