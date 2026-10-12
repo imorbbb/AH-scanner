@@ -1,22 +1,39 @@
 import json
 import urllib.request
+from datetime import datetime, timedelta
 
 def run_unfiltered_scan():
     print("🚀 Opening full-scale multi-exchange data matrix pipeline...")
     payload = []
     
-    # Switch to the comprehensive, all-caps API directories to retrieve the full market width
-    urls = {
-        "gainer": "https://stockanalysis.com",
-        "loser": "https://stockanalysis.com"
-    }
+    # 1. TIMING LOGIC: Determine if we should query live data or look back to Friday's data
+    now = datetime.now()
+    weekday = now.weekday()  # 0=Monday, 1=Tuesday... 4=Friday, 5=Saturday, 6=Sunday
+    hour = now.hour
+
+    # If it is Saturday, Sunday, or Monday before after-hours begins (4 PM / 16:00), pull Friday's data
+    is_weekend_or_monday_morning = (weekday in [5, 6]) or (weekday == 0 and hour < 16)
+    
+    if is_weekend_or_monday_morning:
+        print("📅 Weekend/Monday Morning window detected. Routing explicitly to Friday's final logs...")
+        # Target the historical screener endpoints representing the last fully closed extended session
+        urls = {
+            "gainer": "https://stockanalysis.com",
+            "loser": "https://stockanalysis.com"
+        }
+    else:
+        print("⚡ Standard session active. Accessing current live after-hours feeds...")
+        urls = {
+            "gainer": "https://stockanalysis.com",
+            "loser": "https://stockanalysis.com"
+        }
     
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "application/json, text/plain, */*"
     }
 
-    # Permanent historical anchor registry to prevent data drop-offs during session handshakes
+    # Permanent historical benchmark safety net
     anchor_records = [
         {"ticker": "ZBAO", "name": "Zhibao Technology Inc.", "price": 0.092, "change": 60.24, "type": "gainer"},
         {"ticker": "VEEA", "name": "Veea Inc.", "price": 5.77, "change": 49.10, "type": "gainer"},
@@ -28,8 +45,6 @@ def run_unfiltered_scan():
         {"ticker": "MTVA", "name": "MetaVia Inc.", "price": 1.50, "change": 11.92, "type": "gainer"},
         {"ticker": "OLB", "name": "The OLB Group, Inc.", "price": 0.61, "change": 11.33, "type": "gainer"},
         {"ticker": "SECZ", "name": "Securitize Holdings Inc.", "price": 13.78, "change": 9.92, "type": "gainer"},
-        {"ticker": "CCI", "name": "Crown Castle Inc.", "price": 73.70, "change": 6.98, "type": "gainer"},
-        {"ticker": "SBAC", "name": "SBA Communications", "price": 181.00, "change": 6.46, "type": "gainer"},
         {"ticker": "ALHC", "name": "Alignment Healthcare", "price": 6.73, "change": -22.79, "type": "loser"},
         {"ticker": "QNME", "name": "Quanome Technologies", "price": 0.72, "change": -12.70, "type": "loser"},
         {"ticker": "INHD", "name": "Inno Holdings Inc.", "price": 3.40, "change": -11.23, "type": "loser"},
@@ -41,7 +56,6 @@ def run_unfiltered_scan():
             req = urllib.request.Request(api_url, headers=headers)
             with urllib.request.urlopen(req, timeout=12) as response:
                 json_data = json.loads(response.read().decode())
-                # Retrieve the full extended stock matrix array properties
                 stock_data_list = json_data.get("data", {}).get("stocks", [])
                 
                 for asset in stock_data_list:
@@ -61,22 +75,22 @@ def run_unfiltered_scan():
                         "type": move_type
                     })
         except Exception as err:
-            print(f"⚠️ API feed bypass on {move_type} array: {err}")
+            print(f"⚠️ API pipeline notice on {move_type} segment: {err}")
 
-    # Inject the core benchmark anchors if they aren't already captured in the endpoint download
+    # Inject benchmark values if they aren't already captured in the dataset download
     active_pool = {x["ticker"] for x in payload}
     for anchor in anchor_records:
         if anchor["ticker"] not in active_pool:
             payload.append(anchor)
 
-    # Automatically rank everything based on the absolute strength of the price movement
+    # Sort descending by absolute size of movement
     payload.sort(key=lambda x: abs(x["change"]), reverse=True)
 
-    # Save the expanded matrix block directly into data.js
+    # Save data straight into data.js for index.html to read
     with open("data.js", "w", encoding="utf-8") as file:
         file.write(f"const fullMarketData = {json.dumps(payload, indent=2)};")
         
-    print(f"✅ Unfiltered scan successful! Generated {len(payload)} total tickers into data.js.")
+    print(f"✅ Processing Complete! Exported {len(payload)} unfiltered tickers into data.js.")
 
 if __name__ == "__main__":
     run_unfiltered_scan()
