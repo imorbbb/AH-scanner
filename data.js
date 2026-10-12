@@ -96,19 +96,5 @@ const fullMarketData = [
     "price": 13.78,
     "change": 9.92,
     "type": "gainer"
-  },
-  {
-    "ticker": "CCI",
-    "name": "Crown Castle Inc.",
-    "price": 73.7,
-    "change": 6.98,
-    "type": "gainer"
-  },
-  {
-    "ticker": "SBAC",
-    "name": "SBA Communications",
-    "price": 181.0,
-    "change": 6.46,
-    "type": "gainer"
   }
 ];
