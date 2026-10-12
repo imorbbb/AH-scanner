@@ -2,12 +2,11 @@ name: Daily Market Scanner Core
 
 on:
   schedule:
-    # Triggers every Monday through Friday at 11:30 AM UTC (7:30 AM EST)
     - cron: '30 11 * * 1-5'
-  workflow_dispatch: # Gives you a manual button on GitHub to click and test it instantly
+  workflow_dispatch:
 
 permissions:
-  contents: write # Grants the cloud server permission to save data back into your data.js file
+  contents: write
 
 jobs:
   refresh-data:
@@ -21,6 +20,11 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Install System Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4 requests
+
       - name: Run Market Data Extraction
         run: |
           python scanner.py
@@ -30,5 +34,5 @@ jobs:
           git config --global user.name "Automated Scanner"
           git config --global user.email "actions@github.com"
           git add data.js
-          git commit -m "Automated Morning Data Refresh" || exit 0
+          git commit -m "Automated Morning Data Refresh [Skip CI]" || exit 0
           git push
