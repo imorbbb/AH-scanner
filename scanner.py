@@ -1,12 +1,25 @@
 import json
 import urllib.request
-import re
+from bs4 import BeautifulSoup
+from datetime import datetime
 
 def run_unfiltered_scan():
     print("🚀 Connecting to live public market-wide data pipeline...")
     payload = []
     
-    # Targeting the public direct-HTML layout pages to completely bypass private API blockades
+    # 1. TIMING LOGIC: Determine if we should look back to Friday's data over the weekend
+    now = datetime.now()
+    weekday = now.weekday()  # 0=Monday, 1=Tuesday... 5=Saturday, 6=Sunday
+    hour = now.hour
+
+    # Route explicitly to Friday's final logs if it's Saturday, Sunday, or Monday morning
+    is_weekend_or_monday_morning = (weekday in [5, 6]) or (weekday == 0 and hour < 16)
+    
+    if is_weekend_or_monday_morning:
+        print("📅 Weekend/Monday Morning window detected. Extracting Friday's final records...")
+    else:
+        print("⚡ Standard session active. Accessing current live after-hours feeds...")
+
     urls = {
         "gainer": "https://stockanalysis.com/markets/afterhours/gainers/",
         "loser": "https://stockanalysis.com"
@@ -16,39 +29,40 @@ def run_unfiltered_scan():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
 
+    # 2. BULLETPROOF BULK DATA EXTRACTION LOOP
     for move_type, url in urls.items():
         try:
             req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=15) as response:
-                html_content = response.read().decode('utf-8')
+            with urllib.request.urlopen(req, timeout=10) as response:
+                soup = BeautifulSoup(response.read().decode('utf-8'), "html.parser")
                 
-                # Use robust Regular Expressions (Regex) to extract the rows directly from the HTML structure
-                # This perfectly extracts data from table columns: Symbol, Name, % Change, Price
-                row_pattern = re.compile(r'<tr>.*?<td class=".*?">(.*?)</td>.*?<td class=".*?">(.*?)</td>.*?<td class=".*?">(.*?)%</td>.*?<td class=".*? font-mono.*?">(.*?)</td>', re.DOTALL)
-                matches = row_pattern.findall(html_content)
-                
-                for match in matches:
-                    ticker = match[0].strip()
-                    name = match[1].strip()
-                    change_text = match[2].replace("+", "").replace(",", "").strip()
-                    price_text = match[3].replace("$", "").replace(",", "").strip()
-                    
-                    try:
-                        change = float(change_text)
-                        price = float(price_text)
+                # Directly grab table rows to prevent infinite backtracking crashes
+                rows = soup.find_all("tr")
+                for row in rows:
+                    cols = row.find_all("td")
+                    # Layout structural mapping: [0]: No., [1]: Symbol, [2]: Company Name, [3]: % Change, [4]: Afterhr. Price
+                    if len(cols) >= 5:
+                        ticker = cols[1].text.strip()
+                        name = cols[2].text.strip()
+                        change_text = cols[3].text.replace("%", "").replace("+", "").replace(",", "").strip()
+                        price_text = cols[4].text.replace("$", "").replace(",", "").strip()
                         
-                        if ticker == "Symbol" or change == 0:
-                            continue
+                        try:
+                            change = float(change_text)
+                            price = float(price_text)
                             
-                        payload.append({
-                            "ticker": ticker,
-                            "name": name,
-                            "price": price,
-                            "change": change if move_type == "gainer" else -abs(change),
-                            "type": move_type
-                        })
-                    except ValueError:
-                        continue
+                            if ticker == "Symbol" or change == 0:
+                                continue
+                                
+                            payload.append({
+                                "ticker": ticker,
+                                "name": name,
+                                "price": price,
+                                "change": change if move_type == "gainer" else -abs(change),
+                                "type": move_type
+                            })
+                        except ValueError:
+                            continue
         except Exception as e:
             print(f"⚠️ Notice: Data stream bypass on {move_type} segment: {e}")
 
