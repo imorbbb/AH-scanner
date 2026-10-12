@@ -12,8 +12,8 @@ def run_unfiltered_scan():
     weekday = now.weekday()  # 0=Monday, 1=Tuesday... 5=Saturday, 6=Sunday
     hour = now.hour
 
-    # FIXED: Added [5, 6] to represent Saturday and Sunday cleanly
-    is_weekend_or_monday_morning = (weekday in) or (weekday == 0 and hour < 16)
+    # BULLETPROOF TIMING: Saturday (5) or Sunday (6) is simply >= 5. No 'in' operator needed.
+    is_weekend_or_monday_morning = (weekday >= 5) or (weekday == 0 and hour < 16)
     
     if is_weekend_or_monday_morning:
         print("📅 Weekend/Monday Morning window detected. Extracting Friday's final records...")
