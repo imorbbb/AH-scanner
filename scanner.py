@@ -21,8 +21,8 @@ def run_unfiltered_scan():
         print("⚡ Standard session active. Accessing current live after-hours feeds...")
 
     urls = {
-        "gainer": "https://stockanalysis.com",
-        "loser": "https://stockanalysis.com"
+        "gainer": "https://stockanalysis.com/markets/afterhours/gainers/",
+        "loser": "https://stockanalysis.com/markets/afterhours/losers/"
     }
     
     headers = {
@@ -39,11 +39,17 @@ def run_unfiltered_scan():
                 rows = soup.find_all("tr")
                 for row in rows:
                     cols = row.find_all("td")
-                    if len(cols) >= 5:
-                        ticker = cols[1].text.strip()
-                        name = cols[2].text.strip()
-                        change_text = cols[3].text.replace("%", "").replace("+", "").replace(",", "").strip()
-                        price_text = cols[4].text.replace("$", "").replace(",", "").strip()
+                    # DYNAMIC PARSING: Handles shifting columns on weekdays vs weekends smoothly
+                    if len(cols) >= 4:
+                        # If the first column is a numbering row (like 1, 2, 3), skip past it
+                        text_cells = [c.text.strip() for c in cols]
+                        if text_cells[0].isdigit():
+                            text_cells = text_cells[1:]
+                            
+                        ticker = text_cells[0]
+                        name = text_cells[1]
+                        change_text = text_cells[2].replace("%", "").replace("+", "").replace(",", "").strip()
+                        price_text = text_cells[3].replace("$", "").replace(",", "").strip()
                         
                         try:
                             change = float(change_text)
