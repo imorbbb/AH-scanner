@@ -91,13 +91,6 @@ const fullMarketData = [
     "type": "gainer"
   },
   {
-    "ticker": "SKK",
-    "name": "SKK Holdings Limited",
-    "price": 5.27,
-    "change": -13.32,
-    "type": "loser"
-  },
-  {
     "ticker": "GIXI",
     "name": "Gix Internet Ltd.",
     "price": 4.11,
@@ -277,6 +270,13 @@ const fullMarketData = [
     "name": "Vivakor, Inc.",
     "price": 2.0,
     "change": -7.83,
+    "type": "loser"
+  },
+  {
+    "ticker": "APVO",
+    "name": "Aptevo Therapeutics Inc.",
+    "price": 1.7,
+    "change": -7.42,
     "type": "loser"
   }
 ];
