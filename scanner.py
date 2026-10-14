@@ -1,36 +1,35 @@
 import json
 import urllib.request
-import xml.etree.ElementTree as ET
+import urllib.parse
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
 
-def fetch_yahoo_catalyst(ticker):
+def fetch_yahoo_proxy_catalyst(ticker):
     """
-    Queries the official Yahoo Finance RSS feed for the target ticker
-    to extract the absolute freshest corporate catalyst headline.
+    Routes Yahoo Finance RSS inquiries via a public JSON API proxy
+    to prevent server-side access restrictions and capture clear headlines.
     """
-    # Official unblocked Yahoo RSS news feed layout
-    rss_url = f"https://yahoo.com{ticker}"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-    }
+    # URL-encode the target to prevent special symbols (like hyphens or dots) from damaging the request
+    safe_ticker = urllib.parse.quote(ticker.strip().upper())
+    target_feed = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={safe_ticker}&region=US&lang=en-US"
+    
+    # Wrap target inside a clean, high-availability conversion endpoint
+    proxy_url = f"https://rss2json.com{urllib.parse.quote(target_feed)}"
+    headers = {"User-Agent": "Mozilla/5.0"}
     
     try:
-        req = urllib.request.Request(rss_url, headers=headers)
+        req = urllib.request.Request(proxy_url, headers=headers)
         with urllib.request.urlopen(req, timeout=5) as response:
-            xml_data = response.read()
-            root = ET.fromstring(xml_data)
+            data = json.loads(response.read().decode('utf-8'))
             
-            # Target the first breaking news 'item' node inside the XML document channel
-            item = root.find(".//item")
-            if item is not None:
-                title_node = item.find("title")
-                if title_node is not None and title_node.text:
-                    headline = title_node.text.strip()
+            # Verify the conversion tool successfully parsed the target payload articles
+            if data.get("status") == "ok" and data.get("items"):
+                first_article = data["items"][0]
+                headline = first_article.get("title", "").strip()
+                if headline:
                     return headline
-    except Exception as e:
-        # Fails completely silent to ensure a connection skip never drops the stock runner itself
+    except Exception:
         pass
     
     return "No recent headlines found (Technical or volume momentum play)."
@@ -50,7 +49,7 @@ def run_unfiltered_scan():
     else:
         print("⚡ Standard session active. Accessing current live after-hours feeds...")
 
-    url = "https://stockanalysis.com/markets/afterhours/"
+    url = "https://stockanalysis.com"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
@@ -60,20 +59,17 @@ def run_unfiltered_scan():
         with urllib.request.urlopen(req, timeout=10) as response:
             soup = BeautifulSoup(response.read().decode('utf-8'), "html.parser")
             
-            # Target rows inside the primary after-hours database data layout table
             rows = soup.find_all("tr")
             for row in rows:
                 cols = row.find_all("td")
                 
-                # Check for standard wide-table row length constraints
                 if len(cols) >= 6:
                     text_cells = [c.text.strip() for c in cols]
                     
-                    # If index number row exists (1, 2, 3...), clean it out to align data structures
                     if text_cells[0].isdigit():
                         text_cells = text_cells[1:]
                     
-                    # Explicit layout dictionary alignment mapping
+                    # Direct data field alignment map layout
                     ticker = text_cells[0]
                     name = text_cells[1]
                     change_text = text_cells[2].replace("%", "").replace("+", "").replace(",", "").strip()
@@ -89,11 +85,11 @@ def run_unfiltered_scan():
                             
                         move_type = "gainer" if change > 0 else "loser"
                         
-                        # FETCH CATALYST FROM YAHOO FINANCE FEED
-                        print(f"🔍 Fetching Yahoo Finance catalyst for {ticker}...")
-                        catalyst = fetch_yahoo_catalyst(ticker)
+                        # EXECUTE TWO-PHASE CATALYST LOOKUP
+                        print(f"🔍 Accessing proxy feed pipeline for {ticker}...")
+                        catalyst = fetch_yahoo_proxy_catalyst(ticker)
                         
-                        # Keep a brief breath delay to maintain structural stability
+                        # Short throttle cadence to balance local execution loop
                         time.sleep(0.1)
                             
                         payload.append({
@@ -111,7 +107,7 @@ def run_unfiltered_scan():
     except Exception as e:
         print(f"⚠️ Notice: Data stream bypass: {e}")
 
-    # Sort absolute top percentage runners first to bubble massive moves up instantly
+    # Prioritize absolute maximum percentage breakouts first
     payload.sort(key=lambda x: abs(x["change"]), reverse=True)
 
     with open("data.js", "w", encoding="utf-8") as file:
