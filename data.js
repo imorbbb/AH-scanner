@@ -1,282 +1,282 @@
 const fullMarketData = [
   {
-    "ticker": "FCHL",
-    "name": "Fitness Champs Holdings Limited",
-    "price": 1.84,
-    "change": 84.01,
+    "ticker": "AEHL",
+    "name": "Antelope Enterprise Holdings Limited",
+    "price": 21.45,
+    "change": 150.88,
     "type": "gainer"
   },
   {
-    "ticker": "DCX",
-    "name": "Digital Currency X Technology Inc.",
-    "price": 3.1,
-    "change": 40.91,
+    "ticker": "BDRX",
+    "name": "Biodexa Pharmaceuticals Plc",
+    "price": 0.51,
+    "change": 45.15,
     "type": "gainer"
   },
   {
-    "ticker": "SMTK",
-    "name": "SmartKem, Inc.",
-    "price": 0.74,
-    "change": -30.19,
+    "ticker": "LQDA",
+    "name": "Liquidia Corporation",
+    "price": 38.23,
+    "change": 42.6,
+    "type": "gainer"
+  },
+  {
+    "ticker": "RKDA",
+    "name": "Arcadia Biosciences, Inc.",
+    "price": 0.28,
+    "change": 36.82,
+    "type": "gainer"
+  },
+  {
+    "ticker": "YFOR",
+    "name": "YYForce Inc.",
+    "price": 0.64,
+    "change": -36.0,
     "type": "loser"
   },
   {
-    "ticker": "LNKS",
-    "name": "Linkers Industries Limited",
-    "price": 1.69,
-    "change": -25.55,
-    "type": "loser"
-  },
-  {
-    "ticker": "CLWT",
-    "name": "Euro Tech Holdings Company Limited",
-    "price": 1.67,
-    "change": -22.33,
-    "type": "loser"
-  },
-  {
-    "ticker": "MNDR",
-    "name": "Mobile-health Network Solutions",
-    "price": 2.4,
-    "change": -20.94,
-    "type": "loser"
-  },
-  {
-    "ticker": "MSGY",
-    "name": "Masonglory Limited",
-    "price": 3.21,
-    "change": 18.89,
+    "ticker": "AGMH",
+    "name": "AGM Group Holdings Inc.",
+    "price": 0.69,
+    "change": 29.55,
     "type": "gainer"
   },
   {
-    "ticker": "SNDX",
-    "name": "Syndax Pharmaceuticals, Inc.",
-    "price": 13.75,
-    "change": -16.9,
-    "type": "loser"
-  },
-  {
-    "ticker": "ZBAO",
-    "name": "Zhibao Technology Inc.",
-    "price": 2.0,
-    "change": -16.67,
-    "type": "loser"
-  },
-  {
-    "ticker": "SUGP",
-    "name": "SU Group Holdings Limited",
-    "price": 2.1,
-    "change": 16.02,
-    "type": "gainer"
-  },
-  {
-    "ticker": "SHFS",
-    "name": "SHF Holdings, Inc.",
-    "price": 0.34,
-    "change": -15.24,
-    "type": "loser"
-  },
-  {
-    "ticker": "ITOC",
-    "name": "iTonic Holdings Ltd.",
-    "price": 4.12,
-    "change": 15.08,
-    "type": "gainer"
-  },
-  {
-    "ticker": "KITT",
-    "name": "Nauticus Robotics, Inc.",
-    "price": 1.55,
-    "change": 13.97,
-    "type": "gainer"
-  },
-  {
-    "ticker": "GIXI",
-    "name": "Gix Internet Ltd.",
-    "price": 4.11,
-    "change": -13.02,
-    "type": "loser"
-  },
-  {
-    "ticker": "RIBB",
-    "name": "Ribbon Acquisition Corp.",
-    "price": 8.01,
-    "change": 12.82,
-    "type": "gainer"
-  },
-  {
-    "ticker": "DKI",
-    "name": "Darkiris Inc.",
-    "price": 0.13,
-    "change": -12.7,
-    "type": "loser"
-  },
-  {
-    "ticker": "DAIC",
-    "name": "CID HoldCo, Inc.",
-    "price": 1.91,
-    "change": 12.35,
-    "type": "gainer"
-  },
-  {
-    "ticker": "WBUY",
-    "name": "Webuy Global Ltd",
-    "price": 0.91,
-    "change": 12.16,
-    "type": "gainer"
-  },
-  {
-    "ticker": "FVN",
-    "name": "Future Vision II Acquisition Corp.",
-    "price": 8.88,
-    "change": 11.98,
-    "type": "gainer"
-  },
-  {
-    "ticker": "YMT",
-    "name": "Yimutian Inc.",
-    "price": 1.0,
-    "change": 11.83,
-    "type": "gainer"
-  },
-  {
-    "ticker": "JZ",
-    "name": "Jianzhi Education Technology Group Company Limited",
-    "price": 1.0,
-    "change": -11.5,
-    "type": "loser"
-  },
-  {
-    "ticker": "AGRZ",
-    "name": "Agroz Inc.",
-    "price": 4.88,
-    "change": 11.42,
-    "type": "gainer"
-  },
-  {
-    "ticker": "ZNB",
-    "name": "Zeta Network Group",
+    "ticker": "BMEA",
+    "name": "Biomea Fusion, Inc.",
     "price": 0.9,
-    "change": -11.0,
+    "change": -28.57,
     "type": "loser"
   },
   {
-    "ticker": "LOT",
-    "name": "Lotus Technology Inc.",
-    "price": 0.71,
-    "change": 10.44,
+    "ticker": "ZTG",
+    "name": "Zenta Group Company Limited",
+    "price": 0.72,
+    "change": 28.34,
     "type": "gainer"
   },
   {
-    "ticker": "FUN",
-    "name": "Six Flags Entertainment Corporation",
-    "price": 10.69,
-    "change": -10.34,
-    "type": "loser"
-  },
-  {
-    "ticker": "YMAT",
-    "name": "J-Star Holding Co., Ltd.",
-    "price": 2.61,
-    "change": -10.31,
-    "type": "loser"
-  },
-  {
-    "ticker": "SXTC",
-    "name": "China SXT Pharmaceuticals, Inc.",
-    "price": 0.09,
-    "change": -10.1,
-    "type": "loser"
-  },
-  {
-    "ticker": "OLB",
-    "name": "The OLB Group, Inc.",
-    "price": 0.59,
-    "change": -9.8,
-    "type": "loser"
-  },
-  {
-    "ticker": "OWLS",
-    "name": "Obook Holdings Inc.",
-    "price": 5.83,
-    "change": 9.66,
+    "ticker": "TCRT",
+    "name": "Alaunos Therapeutics, Inc.",
+    "price": 3.88,
+    "change": 28.05,
     "type": "gainer"
   },
   {
-    "ticker": "CDIO",
-    "name": "Cardio Diagnostics Holdings, Inc.",
-    "price": 1.95,
-    "change": 9.55,
-    "type": "gainer"
-  },
-  {
-    "ticker": "FEMY",
-    "name": "Femasys Inc.",
-    "price": 1.91,
-    "change": 9.14,
-    "type": "gainer"
-  },
-  {
-    "ticker": "GURE",
-    "name": "Gulf Resources, Inc.",
-    "price": 3.02,
-    "change": -9.04,
+    "ticker": "JBDI",
+    "name": "JBDI Holdings Limited",
+    "price": 2.69,
+    "change": -21.57,
     "type": "loser"
   },
   {
-    "ticker": "WFF",
-    "name": "WF Holding Limited",
-    "price": 15.73,
-    "change": -8.96,
+    "ticker": "AMTD",
+    "name": "AMTD IDEA Group",
+    "price": 0.46,
+    "change": 19.84,
+    "type": "gainer"
+  },
+  {
+    "ticker": "WVVI",
+    "name": "Willamette Valley Vineyards, Inc.",
+    "price": 1.74,
+    "change": -18.62,
+    "type": "loser"
+  },
+  {
+    "ticker": "FBGL",
+    "name": "FBS Global Limited",
+    "price": 2.86,
+    "change": -18.52,
+    "type": "loser"
+  },
+  {
+    "ticker": "BHST",
+    "name": "BioHarvest Sciences Inc.",
+    "price": 1.5,
+    "change": -17.57,
+    "type": "loser"
+  },
+  {
+    "ticker": "ALXO",
+    "name": "ALX Oncology Holdings Inc.",
+    "price": 1.14,
+    "change": 16.37,
+    "type": "gainer"
+  },
+  {
+    "ticker": "HUBC",
+    "name": "HUB Cyber Security Ltd.",
+    "price": 0.52,
+    "change": -15.13,
     "type": "loser"
   },
   {
     "ticker": "TWG",
     "name": "Top Wealth Group Holding Limited",
-    "price": 0.07,
-    "change": -8.88,
-    "type": "loser"
-  },
-  {
-    "ticker": "ANTA",
-    "name": "Antalpha Platform Holding Company",
-    "price": 2.6,
-    "change": 8.79,
+    "price": 0.1,
+    "change": 13.74,
     "type": "gainer"
   },
   {
-    "ticker": "PHIO",
-    "name": "Phio Pharmaceuticals Corp.",
+    "ticker": "AIIO",
+    "name": "Robo.ai Inc.",
     "price": 1.0,
-    "change": 8.36,
-    "type": "gainer"
-  },
-  {
-    "ticker": "GSUN",
-    "name": "Golden Sun Technology Group Limited",
-    "price": 0.22,
-    "change": 8.28,
-    "type": "gainer"
-  },
-  {
-    "ticker": "POLA",
-    "name": "Polar Power, Inc.",
-    "price": 1.19,
-    "change": 8.18,
-    "type": "gainer"
-  },
-  {
-    "ticker": "VIVK",
-    "name": "Vivakor, Inc.",
-    "price": 2.0,
-    "change": -7.83,
+    "change": -13.04,
     "type": "loser"
   },
   {
-    "ticker": "APVO",
-    "name": "Aptevo Therapeutics Inc.",
-    "price": 1.7,
-    "change": -7.42,
+    "ticker": "SCNI",
+    "name": "Scinai Immunotherapeutics Ltd.",
+    "price": 1.07,
+    "change": -13.01,
+    "type": "loser"
+  },
+  {
+    "ticker": "EPOW",
+    "name": "E-Power Inc.",
+    "price": 3.39,
+    "change": 12.63,
+    "type": "gainer"
+  },
+  {
+    "ticker": "HODO",
+    "name": "House of Doge Inc.",
+    "price": 0.1,
+    "change": 12.19,
+    "type": "gainer"
+  },
+  {
+    "ticker": "CNEY",
+    "name": "CN Energy Group. Inc.",
+    "price": 0.42,
+    "change": -12.02,
+    "type": "loser"
+  },
+  {
+    "ticker": "EVAX",
+    "name": "Evaxion A/S",
+    "price": 3.09,
+    "change": 11.96,
+    "type": "gainer"
+  },
+  {
+    "ticker": "ENVX",
+    "name": "Enovix Corporation",
+    "price": 2.81,
+    "change": 11.95,
+    "type": "gainer"
+  },
+  {
+    "ticker": "FEBO",
+    "name": "Fenbo Holdings Limited",
+    "price": 0.66,
+    "change": -10.97,
+    "type": "loser"
+  },
+  {
+    "ticker": "AIOK",
+    "name": "AI OKTO CORP.",
+    "price": 5.99,
+    "change": 10.93,
+    "type": "gainer"
+  },
+  {
+    "ticker": "TOMZ",
+    "name": "TOMI Environmental Solutions, Inc.",
+    "price": 1.47,
+    "change": -10.81,
+    "type": "loser"
+  },
+  {
+    "ticker": "IZM",
+    "name": "ICZOOM Group Inc.",
+    "price": 1.13,
+    "change": -10.32,
+    "type": "loser"
+  },
+  {
+    "ticker": "BKYI",
+    "name": "BIO-key International, Inc.",
+    "price": 3.12,
+    "change": 10.25,
+    "type": "gainer"
+  },
+  {
+    "ticker": "NWTG",
+    "name": "Newton Golf Company, Inc.",
+    "price": 0.77,
+    "change": -10.06,
+    "type": "loser"
+  },
+  {
+    "ticker": "CPOP",
+    "name": "Pop Culture Group Co., Ltd",
+    "price": 3.46,
+    "change": 9.49,
+    "type": "gainer"
+  },
+  {
+    "ticker": "FGL",
+    "name": "Founder Group Limited",
+    "price": 4.5,
+    "change": 9.49,
+    "type": "gainer"
+  },
+  {
+    "ticker": "NCPL",
+    "name": "Netcapital Inc.",
+    "price": 1.52,
+    "change": 9.35,
+    "type": "gainer"
+  },
+  {
+    "ticker": "EUDA",
+    "name": "EUDA Health Holdings Limited",
+    "price": 15.49,
+    "change": -8.93,
+    "type": "loser"
+  },
+  {
+    "ticker": "JLHL",
+    "name": "Julong Holding Limited",
+    "price": 4.69,
+    "change": -8.93,
+    "type": "loser"
+  },
+  {
+    "ticker": "ENHA",
+    "name": "Enhanced Group Inc.",
+    "price": 1.35,
+    "change": 8.87,
+    "type": "gainer"
+  },
+  {
+    "ticker": "HPAI",
+    "name": "Helport AI Limited",
+    "price": 0.3,
+    "change": -8.68,
+    "type": "loser"
+  },
+  {
+    "ticker": "SDST",
+    "name": "Stardust Power Inc.",
+    "price": 0.04,
+    "change": -8.48,
+    "type": "loser"
+  },
+  {
+    "ticker": "MNDR",
+    "name": "Mobile-health Network Solutions",
+    "price": 1.34,
+    "change": -8.22,
+    "type": "loser"
+  },
+  {
+    "ticker": "EZRA",
+    "name": "Reliance Global Group, Inc.",
+    "price": 2.12,
+    "change": -7.83,
     "type": "loser"
   }
 ];
