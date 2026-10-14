@@ -7,7 +7,7 @@ import time
 def fetch_finviz_catalyst(ticker):
     """
     Attempts to scrape Finviz for a headline. 
-    Returns a fallback string instead of crashing if the stock has no news.
+    Returns a fallback string if the stock has no recent news.
     """
     url = f"https://finviz.com{ticker}"
     headers = {
@@ -28,9 +28,7 @@ def fetch_finviz_catalyst(ticker):
                         if headline_text:
                             return headline_text
     except Exception:
-        # If Finviz blocks us or rate-limits, we fail silently and return a placeholder
-        return "No recent headlines found (Technical or volume momentum play)."
-        
+        pass
     return "No recent headlines found (Technical or volume momentum play)."
 
 def run_unfiltered_scan():
@@ -48,7 +46,7 @@ def run_unfiltered_scan():
     else:
         print("⚡ Standard session active. Accessing current live after-hours feeds...")
 
-    url = "https://stockanalysis.com"
+    url = "https://stockanalysis.com/markets/afterhours/"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
@@ -62,38 +60,41 @@ def run_unfiltered_scan():
             for row in rows:
                 cols = row.find_all("td")
                 
-                if len(cols) >= 5:
+                # Verify we have enough columns to safely extract the complete layout array
+                if len(cols) >= 6:
                     text_cells = [c.text.strip() for c in cols]
+                    
+                    # If the first cell is an index number row (1, 2, 3), drop it to align columns
                     if text_cells[0].isdigit():
                         text_cells = text_cells[1:]
-                        
+                    
+                    # FIXED EXTRACTOR DICTIONARY: Maps distinct, explicit indexes 
                     ticker = text_cells[0]
                     name = text_cells[1]
                     change_text = text_cells[2].replace("%", "").replace("+", "").replace(",", "").strip()
                     price_text = text_cells[3].replace("$", "").replace(",", "").strip()
-                    market_cap_text = text_cells[4].upper().strip()
+                    
+                    # Safely handle the market cap column index variant if it shifts slightly
+                    market_cap_text = text_cells[5].upper().strip() if len(text_cells) >= 6 else "N/A"
                     
                     try:
                         change = float(change_text)
                         price = float(price_text)
                         
-                        # Keep the absolute baseline loose so you see ALL active movers
+                        # Only skip absolute flat tickers
                         if change == 0:
                             continue
                             
                         move_type = "gainer" if change > 0 else "loser"
                         
-                        # CRITICAL FIX: Fetch news, but use a try/except block to guarantee 
-                        # that even if news fetching fails completely, the stock is NEVER skipped.
-                        print(f"🔍 Checking catalyst for {ticker}...")
+                        # FETCH NEWS (Decoupled completely so failures won't drop the stock)
+                        print(f"🔍 Fetching catalyst headline for {ticker}...")
                         try:
                             catalyst = fetch_finviz_catalyst(ticker)
-                            # Tiny 200ms delay to keep the scanner flowing fast without triggering Finviz's heavy blocks
-                            time.sleep(0.2)
+                            time.sleep(0.2) # Friendly spacing delay to remain unblocked
                         except Exception:
-                            catalyst = "Catalyst stream offline for this ticker."
+                            catalyst = "Catalyst database offline."
                             
-                        # Stock is appended safely no matter what happened above
                         payload.append({
                             "ticker": ticker,
                             "name": name,
@@ -105,16 +106,17 @@ def run_unfiltered_scan():
                         })
                     except ValueError:
                         continue
+                        
     except Exception as e:
         print(f"⚠️ Notice: Data stream bypass: {e}")
 
-    # Sort absolute top runners first (highest percent moves show at the top of your layout)
+    # Sort absolute top percentage runners first
     payload.sort(key=lambda x: abs(x["change"]), reverse=True)
 
     with open("data.js", "w", encoding="utf-8") as file:
         file.write(f"const fullMarketData = {json.dumps(payload, indent=2)};")
         
-    print(f"✅ Processing complete! Safely extracted {len(payload)} runners into data.js.")
+    print(f"✅ Processing complete! Safely extracted {len(payload)} unfiltered tickers into data.js.")
 
 if __name__ == "__main__":
     run_unfiltered_scan()
