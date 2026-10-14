@@ -1,34 +1,38 @@
 import json
 import urllib.request
+import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
 
-def fetch_finviz_catalyst(ticker):
+def fetch_yahoo_catalyst(ticker):
     """
-    Attempts to scrape Finviz for a headline. 
-    Returns a fallback string if the stock has no recent news.
+    Queries the official Yahoo Finance RSS feed for the target ticker
+    to extract the absolute freshest corporate catalyst headline.
     """
-    url = f"https://finviz.com{ticker}"
+    # Official unblocked Yahoo RSS news feed layout
+    rss_url = f"https://yahoo.com{ticker}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     }
     
     try:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=4) as response:
-            soup = BeautifulSoup(response.read().decode('utf-8', errors='ignore'), "html.parser")
-            news_table = soup.find("table", id="news-table")
-            if news_table:
-                first_row = news_table.find("tr")
-                if first_row:
-                    links = first_row.find_all("a")
-                    for link in links:
-                        headline_text = link.text.strip()
-                        if headline_text:
-                            return headline_text
-    except Exception:
+        req = urllib.request.Request(rss_url, headers=headers)
+        with urllib.request.urlopen(req, timeout=5) as response:
+            xml_data = response.read()
+            root = ET.fromstring(xml_data)
+            
+            # Target the first breaking news 'item' node inside the XML document channel
+            item = root.find(".//item")
+            if item is not None:
+                title_node = item.find("title")
+                if title_node is not None and title_node.text:
+                    headline = title_node.text.strip()
+                    return headline
+    except Exception as e:
+        # Fails completely silent to ensure a connection skip never drops the stock runner itself
         pass
+    
     return "No recent headlines found (Technical or volume momentum play)."
 
 def run_unfiltered_scan():
@@ -56,44 +60,41 @@ def run_unfiltered_scan():
         with urllib.request.urlopen(req, timeout=10) as response:
             soup = BeautifulSoup(response.read().decode('utf-8'), "html.parser")
             
+            # Target rows inside the primary after-hours database data layout table
             rows = soup.find_all("tr")
             for row in rows:
                 cols = row.find_all("td")
                 
-                # Verify we have enough columns to safely extract the complete layout array
+                # Check for standard wide-table row length constraints
                 if len(cols) >= 6:
                     text_cells = [c.text.strip() for c in cols]
                     
-                    # If the first cell is an index number row (1, 2, 3), drop it to align columns
+                    # If index number row exists (1, 2, 3...), clean it out to align data structures
                     if text_cells[0].isdigit():
                         text_cells = text_cells[1:]
                     
-                    # FIXED EXTRACTOR DICTIONARY: Maps distinct, explicit indexes 
+                    # Explicit layout dictionary alignment mapping
                     ticker = text_cells[0]
                     name = text_cells[1]
                     change_text = text_cells[2].replace("%", "").replace("+", "").replace(",", "").strip()
                     price_text = text_cells[3].replace("$", "").replace(",", "").strip()
-                    
-                    # Safely handle the market cap column index variant if it shifts slightly
                     market_cap_text = text_cells[5].upper().strip() if len(text_cells) >= 6 else "N/A"
                     
                     try:
                         change = float(change_text)
                         price = float(price_text)
                         
-                        # Only skip absolute flat tickers
                         if change == 0:
                             continue
                             
                         move_type = "gainer" if change > 0 else "loser"
                         
-                        # FETCH NEWS (Decoupled completely so failures won't drop the stock)
-                        print(f"🔍 Fetching catalyst headline for {ticker}...")
-                        try:
-                            catalyst = fetch_finviz_catalyst(ticker)
-                            time.sleep(0.2) # Friendly spacing delay to remain unblocked
-                        except Exception:
-                            catalyst = "Catalyst database offline."
+                        # FETCH CATALYST FROM YAHOO FINANCE FEED
+                        print(f"🔍 Fetching Yahoo Finance catalyst for {ticker}...")
+                        catalyst = fetch_yahoo_catalyst(ticker)
+                        
+                        # Keep a brief breath delay to maintain structural stability
+                        time.sleep(0.1)
                             
                         payload.append({
                             "ticker": ticker,
@@ -110,7 +111,7 @@ def run_unfiltered_scan():
     except Exception as e:
         print(f"⚠️ Notice: Data stream bypass: {e}")
 
-    # Sort absolute top percentage runners first
+    # Sort absolute top percentage runners first to bubble massive moves up instantly
     payload.sort(key=lambda x: abs(x["change"]), reverse=True)
 
     with open("data.js", "w", encoding="utf-8") as file:
