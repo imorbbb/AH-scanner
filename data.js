@@ -1,181 +1,181 @@
 const fullMarketData = [
   {
+    "ticker": "ULBI",
+    "name": "Ultralife Corporation",
+    "price": 15.56,
+    "change": 144.65,
+    "market_cap": "260.28M",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
     "ticker": "BRAI",
     "name": "Braiin Limited",
-    "price": 3.22,
-    "change": 51.89,
-    "market_cap": "436.91M",
+    "price": 5.15,
+    "change": 55.59,
+    "market_cap": "972.74M",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "SNTI",
-    "name": "Senti Biosciences Holdings, Inc.",
-    "price": 0.25,
-    "change": 41.06,
-    "market_cap": "5.45M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "ELWT",
-    "name": "Elauwit Connection, Inc.",
-    "price": 7.5,
-    "change": 40.19,
-    "market_cap": "35.42M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "SPRC",
-    "name": "SciSparc Ltd.",
-    "price": 0.85,
-    "change": -34.08,
-    "market_cap": "749.46K",
+    "ticker": "SCKT",
+    "name": "Socket Mobile, Inc.",
+    "price": 0.36,
+    "change": -30.25,
+    "market_cap": "3.07M",
     "type": "loser",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "DVLT",
-    "name": "Datavault AI Inc.",
-    "price": 0.09,
-    "change": -28.54,
-    "market_cap": "126.12M",
-    "type": "loser",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "MKDW",
-    "name": "MKDWELL Tech Inc.",
-    "price": 0.51,
-    "change": 21.08,
-    "market_cap": "14.28M",
+    "ticker": "DAVI",
+    "name": "Davion Healthcare Plc",
+    "price": 3.87,
+    "change": 28.99,
+    "market_cap": "87.75M",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "XXII",
-    "name": "22nd Century Group, Inc.",
-    "price": 0.11,
-    "change": 21.04,
-    "market_cap": "63.12K",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "ONCO",
-    "name": "Onconetix, Inc.",
-    "price": 0.33,
-    "change": -17.31,
-    "market_cap": "1.58M",
+    "ticker": "NWGL",
+    "name": "CL Workshop Group Limited",
+    "price": 0.08,
+    "change": -21.62,
+    "market_cap": "2.46M",
     "type": "loser",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "CLS",
-    "name": "Celestica Inc.",
-    "price": 288.07,
-    "change": 16.79,
-    "market_cap": "31.21B",
+    "ticker": "SURG",
+    "name": "SurgePays, Inc.",
+    "price": 0.18,
+    "change": 21.16,
+    "market_cap": "7.96M",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "RAPP",
+    "name": "Rapport Therapeutics, Inc.",
+    "price": 22.02,
+    "change": -20.03,
+    "market_cap": "1.14B",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "PMEC",
+    "name": "Primech Holdings Ltd.",
+    "price": 0.44,
+    "change": 19.39,
+    "market_cap": "15.37M",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "BOOM",
+    "name": "DMC Global Inc.",
+    "price": 6.25,
+    "change": 16.82,
+    "market_cap": "141.73M",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "IPST",
-    "name": "IP Strategy Holdings, Inc.",
-    "price": 2.46,
-    "change": 15.48,
-    "market_cap": "2.12M",
+    "ticker": "ENPH",
+    "name": "Enphase Energy, Inc.",
+    "price": 25.14,
+    "change": -15.52,
+    "market_cap": "3.35B",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "OXBR",
+    "name": "Oxbridge Re Holdings Limited",
+    "price": 0.8,
+    "change": 15.43,
+    "market_cap": "5.67M",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "TDIC",
-    "name": "Dreamland Limited",
-    "price": 1.72,
-    "change": 14.67,
-    "market_cap": "5.71M",
+    "ticker": "MEGL",
+    "name": "Magic Empire Global Limited",
+    "price": 0.28,
+    "change": -15.09,
+    "market_cap": "16.25M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "INTA",
+    "name": "Intapp, Inc.",
+    "price": 36.55,
+    "change": -14.9,
+    "market_cap": "3.26B",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "EQS",
+    "name": "Equus Total Return, Inc.",
+    "price": 0.55,
+    "change": -14.06,
+    "market_cap": "8.94M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "NOMA",
+    "name": "Nomadar Corp.",
+    "price": 1.78,
+    "change": 13.36,
+    "market_cap": "29.87M",
     "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "AMTD",
+    "name": "AMTD IDEA Group",
+    "price": 19.76,
+    "change": -13.14,
+    "market_cap": "34.96M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "NIVF",
+    "name": "NewGenIvf Group Limited",
+    "price": 1.3,
+    "change": 13.05,
+    "market_cap": "1.26M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "SHFS",
+    "name": "SHF Holdings, Inc.",
+    "price": 0.1,
+    "change": -12.44,
+    "market_cap": "95.27K",
+    "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
     "ticker": "ICMB",
     "name": "Investcorp Credit Management BDC, Inc.",
     "price": 0.84,
-    "change": 14.55,
-    "market_cap": "10.54M",
+    "change": 12.25,
+    "market_cap": "11.26M",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "RFAI",
-    "name": "RF Acquisition Corp II",
-    "price": 31.0,
-    "change": -13.48,
-    "market_cap": "298.96M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "SBFM",
-    "name": "Sunshine Biopharma, Inc.",
-    "price": 3.0,
-    "change": 13.21,
-    "market_cap": "513.75K",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "CRMT",
-    "name": "America's Car-Mart, Inc.",
-    "price": 0.69,
-    "change": -11.55,
-    "market_cap": "6.50M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "LIMN",
-    "name": "Liminatus Pharma, Inc.",
-    "price": 2.82,
-    "change": -10.76,
-    "market_cap": "4.24M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "ZSQR",
-    "name": "Z Squared Inc.",
-    "price": 3.72,
-    "change": -10.05,
-    "market_cap": "219.42M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "HQY",
-    "name": "HealthEquity, Inc.",
-    "price": 93.35,
-    "change": -10.02,
-    "market_cap": "8.58B",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "LABT",
-    "name": "Lakewood-Amedex Biotherapeutics, Inc.",
-    "price": 0.26,
-    "change": -9.89,
-    "market_cap": "670.62K",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "TANH",
-    "name": "Tantech Holdings Ltd",
-    "price": 11.8,
-    "change": -9.3,
-    "market_cap": "3.77M",
+    "ticker": "TDTH",
+    "name": "Trident Digital Tech Holdings Ltd",
+    "price": 0.52,
+    "change": -12.08,
+    "market_cap": "34.59M",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   }
