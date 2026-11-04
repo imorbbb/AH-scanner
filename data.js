@@ -1,181 +1,181 @@
 const fullMarketData = [
   {
-    "ticker": "MERC",
-    "name": "Mercer International Inc.",
-    "price": 0.29,
-    "change": 126.19,
-    "market_cap": "8.44M",
+    "ticker": "HPAI",
+    "name": "Helport AI Limited",
+    "price": 0.37,
+    "change": 55.2,
+    "market_cap": "9.06M",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "CCTG",
-    "name": "CCSC Technology International Holdings Limited",
-    "price": 0.47,
-    "change": 62.12,
-    "market_cap": "1.13M",
+    "ticker": "DOX",
+    "name": "Amdocs Limited",
+    "price": 34.58,
+    "change": -44.61,
+    "market_cap": "6.52B",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "CENN",
+    "name": "Cenntro Inc.",
+    "price": 0.18,
+    "change": -39.5,
+    "market_cap": "731.29K",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "CRIS",
+    "name": "Curis, Inc.",
+    "price": 0.96,
+    "change": 34.74,
+    "market_cap": "2.93M",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "MLEC",
-    "name": "Moolec Science SA",
-    "price": 0.38,
-    "change": -55.88,
-    "market_cap": "1.77M",
+    "ticker": "NRIX",
+    "name": "Nurix Therapeutics, Inc.",
+    "price": 17.4,
+    "change": -32.61,
+    "market_cap": "2.82B",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "DKI",
+    "name": "Darkiris Inc.",
+    "price": 1.96,
+    "change": 30.67,
+    "market_cap": "89.90K",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "JG",
+    "name": "Aurora Mobile Limited",
+    "price": 4.53,
+    "change": -25.49,
+    "market_cap": "35.99M",
     "type": "loser",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
     "ticker": "PARA",
     "name": "Parabolic Technologies, Inc.",
-    "price": 2.45,
-    "change": 44.99,
-    "market_cap": "762.01K",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "HODO",
-    "name": "House of Doge Inc.",
-    "price": 0.02,
-    "change": -44.89,
-    "market_cap": "3.40M",
+    "price": 2.19,
+    "change": -19.51,
+    "market_cap": "1.23M",
     "type": "loser",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "BLZE",
-    "name": "Backblaze, Inc.",
-    "price": 10.28,
-    "change": 38.92,
-    "market_cap": "458.06M",
+    "ticker": "LMB",
+    "name": "Limbach Holdings, Inc.",
+    "price": 59.5,
+    "change": 19.19,
+    "market_cap": "595.30M",
     "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+    "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "INLF",
-    "name": "INLIF Limited",
-    "price": 0.37,
-    "change": 27.63,
-    "market_cap": "442.18K",
+    "ticker": "FTK",
+    "name": "Flotek Industries, Inc.",
+    "price": 29.3,
+    "change": 17.96,
+    "market_cap": "898.57M",
     "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+    "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "ADEA",
-    "name": "Adeia Inc.",
-    "price": 15.82,
-    "change": -23.46,
-    "market_cap": "2.28B",
-    "type": "loser",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+    "ticker": "WORX",
+    "name": "SCWorx Corp.",
+    "price": 1.68,
+    "change": 17.48,
+    "market_cap": "785.21K",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "BVS",
-    "name": "Bioventus Inc.",
-    "price": 10.46,
-    "change": -20.46,
-    "market_cap": "1.11B",
+    "ticker": "SWKS",
+    "name": "Skyworks Solutions, Inc.",
+    "price": 70.58,
+    "change": -17.35,
+    "market_cap": "12.85B",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "BRAI",
-    "name": "Braiin Limited",
-    "price": 2.97,
-    "change": 18.8,
-    "market_cap": "515.22M",
+    "ticker": "CBLL",
+    "name": "CeriBell, Inc.",
+    "price": 23.5,
+    "change": -16.87,
+    "market_cap": "1.08B",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "ALIT",
+    "name": "Alight, Inc.",
+    "price": 11.75,
+    "change": 16.11,
+    "market_cap": "267.61M",
     "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "YOUL",
+    "name": "Youlife Group Inc.",
+    "price": 0.31,
+    "change": 15.74,
+    "market_cap": "21.98M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "CRCT",
+    "name": "Cricut, Inc.",
+    "price": 6.88,
+    "change": 15.24,
+    "market_cap": "1.25B",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "OPRT",
+    "name": "Oportun Financial Corporation",
+    "price": 11.49,
+    "change": 14.44,
+    "market_cap": "461.71M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "BXC",
+    "name": "BlueLinx Holdings Inc.",
+    "price": 64.0,
+    "change": -11.8,
+    "market_cap": "570.34M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "CSAI",
+    "name": "Cloudastructure Inc.",
+    "price": 2.1,
+    "change": -11.77,
+    "market_cap": "2.06M",
+    "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
     "ticker": "BDMD",
     "name": "Baird Medical Investment Holdings Limited",
-    "price": 0.11,
-    "change": -18.62,
-    "market_cap": "4.42M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "SMTK",
-    "name": "SmartKem, Inc.",
-    "price": 0.29,
-    "change": -17.76,
-    "market_cap": "198.58K",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "HLIT",
-    "name": "Harmonic Inc.",
-    "price": 11.9,
-    "change": 16.78,
-    "market_cap": "1.11B",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "VCIG",
-    "name": "VCI Global Limited",
-    "price": 6.83,
-    "change": -16.32,
-    "market_cap": "280.61K",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "EBS",
-    "name": "Emergent BioSolutions Inc.",
-    "price": 5.42,
-    "change": -15.84,
-    "market_cap": "330.20M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "YQ",
-    "name": "17 Education & Technology Group Inc.",
-    "price": 3.26,
-    "change": 15.19,
-    "market_cap": "30.72M",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "GPRO",
-    "name": "GoPro, Inc.",
-    "price": 1.1,
-    "change": 15.15,
-    "market_cap": "171.71M",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "LIMN",
-    "name": "Liminatus Pharma, Inc.",
-    "price": 2.9,
-    "change": 15.08,
-    "market_cap": "3.38M",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "GVH",
-    "name": "Globavend Holdings Limited",
-    "price": 0.74,
-    "change": -13.86,
-    "market_cap": "3.70M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "CWH",
-    "name": "Camping World Holdings, Inc.",
-    "price": 4.7,
-    "change": -12.15,
-    "market_cap": "554.92M",
+    "price": 0.1,
+    "change": -11.11,
+    "market_cap": "3.74M",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   }
