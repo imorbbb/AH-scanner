@@ -1,181 +1,181 @@
 const fullMarketData = [
   {
-    "ticker": "OMH",
-    "name": "Ohmyhome Limited",
-    "price": 15.29,
-    "change": 107.75,
-    "market_cap": "99.99M",
+    "ticker": "CISS",
+    "name": "C3is Inc.",
+    "price": 2.84,
+    "change": 62.29,
+    "market_cap": "124.29K",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "TANH",
+    "name": "Tantech Holdings Ltd",
+    "price": 30.0,
+    "change": 55.12,
+    "market_cap": "5.63M",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "MVST",
+    "name": "Microvast Holdings, Inc.",
+    "price": 0.29,
+    "change": -52.63,
+    "market_cap": "85.79M",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "KUST",
+    "name": "Kustom Entertainment, Inc.",
+    "price": 2.0,
+    "change": -41.52,
+    "market_cap": "2.23M",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "CODX",
+    "name": "Co-Diagnostics, Inc.",
+    "price": 0.45,
+    "change": 40.53,
+    "market_cap": "2.26M",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "IHRT",
+    "name": "iHeartMedia, Inc.",
+    "price": 1.13,
+    "change": -36.16,
+    "market_cap": "107.89M",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "THRY",
+    "name": "Thryv Holdings, Inc.",
+    "price": 0.93,
+    "change": -27.31,
+    "market_cap": "52.88M",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "APPS",
+    "name": "Digital Turbine, Inc.",
+    "price": 8.33,
+    "change": -26.33,
+    "market_cap": "883.70M",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "SKYE",
+    "name": "Skye Bioscience, Inc.",
+    "price": 0.87,
+    "change": 25.36,
+    "market_cap": "3.38M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "AMIX",
+    "name": "Autonomix Medical, Inc.",
+    "price": 2.13,
+    "change": 25.29,
+    "market_cap": "4.90M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "WFF",
+    "name": "WF Holding Limited",
+    "price": 1.34,
+    "change": 24.07,
+    "market_cap": "6.45M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
     "ticker": "TGE",
     "name": "The Generation Essentials Group",
-    "price": 0.62,
-    "change": 71.28,
-    "market_cap": "17.44M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "JDZG",
-    "name": "JIADE Limited",
-    "price": 0.31,
-    "change": 47.0,
-    "market_cap": "1.70M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "NWGL",
-    "name": "CL Workshop Group Limited",
-    "price": 3.43,
-    "change": 35.57,
-    "market_cap": "2.38M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "CCEP",
-    "name": "Coca-Cola Europacific Partners PLC",
-    "price": 143.97,
-    "change": 23.97,
-    "market_cap": "51.56B",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "SMX",
-    "name": "SMX (Security Matters) Public Limited Company",
-    "price": 2.13,
-    "change": 21.02,
-    "market_cap": "2.06M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "CCHH",
-    "name": "CCH Holdings Ltd",
-    "price": 0.89,
-    "change": 20.79,
-    "market_cap": "14.65M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "SDA",
-    "name": "SunCar Technology Group Inc.",
-    "price": 0.3,
-    "change": -19.81,
-    "market_cap": "34.40M",
-    "type": "loser",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "PLUT",
-    "name": "Plutus Financial Group Limited",
-    "price": 0.89,
-    "change": -18.82,
-    "market_cap": "15.81M",
+    "price": 0.28,
+    "change": -22.54,
+    "market_cap": "13.95M",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "PARA",
-    "name": "Parabolic Technologies, Inc.",
-    "price": 0.14,
-    "change": 18.78,
-    "market_cap": "35.85K",
+    "ticker": "FF",
+    "name": "FutureFuel Corp.",
+    "price": 3.94,
+    "change": -22.29,
+    "market_cap": "125.45M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "RUBI",
+    "name": "Rubico Inc.",
+    "price": 2.23,
+    "change": 21.2,
+    "market_cap": "46.83K",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "NYXH",
-    "name": "Nyxoah SA",
-    "price": 1.0,
-    "change": 18.26,
-    "market_cap": "90.10M",
+    "ticker": "SANM",
+    "name": "Sanmina Corporation",
+    "price": 179.95,
+    "change": 20.25,
+    "market_cap": "8.96B",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "NXXT",
-    "name": "NextNRG, Inc.",
-    "price": 2.69,
-    "change": 16.96,
-    "market_cap": "4.04M",
+    "ticker": "OIO",
+    "name": "OIO Group",
+    "price": 1.44,
+    "change": -20.0,
+    "market_cap": "622.96M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "MFI",
+    "name": "mF International Limited",
+    "price": 6.4,
+    "change": 19.58,
+    "market_cap": "271.45M",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "VIVK",
-    "name": "Vivakor, Inc.",
-    "price": 0.42,
-    "change": -16.22,
-    "market_cap": "234.65K",
+    "ticker": "ADRX",
+    "name": "ADARx Pharmaceuticals, Inc.",
+    "price": 16.47,
+    "change": 19.35,
+    "market_cap": "1.57B",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "GRPN",
+    "name": "Groupon, Inc.",
+    "price": 13.33,
+    "change": -17.98,
+    "market_cap": "528.65M",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "NAAS",
-    "name": "NaaS Technology Inc.",
-    "price": 1.65,
-    "change": -15.39,
-    "market_cap": "42.49M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "RCT",
-    "name": "RedCloud Holdings plc",
-    "price": 0.04,
-    "change": -14.62,
-    "market_cap": "2.61M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "ABX",
-    "name": "Abacus Global Management, Inc.",
-    "price": 7.51,
-    "change": -14.47,
-    "market_cap": "860.04M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "CRIS",
-    "name": "Curis, Inc.",
-    "price": 0.78,
-    "change": -13.73,
-    "market_cap": "3.07M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "PLUR",
-    "name": "Pluri Inc.",
-    "price": 1.07,
-    "change": -13.38,
-    "market_cap": "15.43M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "PMEC",
-    "name": "Primech Holdings Ltd.",
-    "price": 0.26,
-    "change": -12.56,
-    "market_cap": "12.87M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "BSEM",
-    "name": "BioStem Technologies, Inc.",
-    "price": 1.0,
-    "change": -11.5,
-    "market_cap": "22.12M",
+    "ticker": "WCT",
+    "name": "Wellchange Holdings Company Limited",
+    "price": 3.76,
+    "change": -15.88,
+    "market_cap": "4.70M",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   }
