@@ -1,181 +1,181 @@
 const fullMarketData = [
   {
-    "ticker": "AZI",
-    "name": "Autozi Internet Technology (Global) Ltd.",
-    "price": 1.23,
-    "change": 68.48,
-    "market_cap": "63.70M",
+    "ticker": "INHD",
+    "name": "Inno Holdings Inc.",
+    "price": 4.05,
+    "change": 76.09,
+    "market_cap": "7.86M",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "SHFS",
-    "name": "SHF Holdings, Inc.",
-    "price": 0.01,
-    "change": -57.44,
-    "market_cap": "846.39K",
+    "ticker": "FCHL",
+    "name": "Fitness Champs Holdings Limited",
+    "price": 0.35,
+    "change": -37.83,
+    "market_cap": "78.55K",
     "type": "loser",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "ABTS",
-    "name": "Abits Group Inc.",
-    "price": 0.46,
-    "change": 45.79,
-    "market_cap": "922.55K",
+    "ticker": "SPRC",
+    "name": "SciSparc Ltd.",
+    "price": 0.37,
+    "change": 36.02,
+    "market_cap": "811.21K",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "CRIS",
-    "name": "Curis, Inc.",
-    "price": 0.71,
-    "change": 31.37,
-    "market_cap": "2.34M",
+    "ticker": "XCH",
+    "name": "XCHG Limited",
+    "price": 4.0,
+    "change": 19.76,
+    "market_cap": "13.72M",
     "type": "gainer",
     "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
   },
   {
-    "ticker": "IRIX",
-    "name": "IRIDEX Corporation",
+    "ticker": "CABR",
+    "name": "Caring Brands, Inc.",
+    "price": 0.76,
+    "change": 19.57,
+    "market_cap": "7.47M",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "VWAV",
+    "name": "VisionWave Holdings, Inc.",
+    "price": 0.63,
+    "change": -18.74,
+    "market_cap": "1.04M",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "AHMA",
+    "name": "Ambitions Enterprise Management Co. L.L.C",
+    "price": 1.04,
+    "change": 18.6,
+    "market_cap": "28.33M",
+    "type": "gainer",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "RRGB",
+    "name": "Red Robin Gourmet Burgers, Inc.",
+    "price": 6.56,
+    "change": -17.48,
+    "market_cap": "118.69M",
+    "type": "loser",
+    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
+  },
+  {
+    "ticker": "INLF",
+    "name": "INLIF Limited",
+    "price": 0.27,
+    "change": 16.85,
+    "market_cap": "388.19K",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "MRM",
+    "name": "MEDIROM Healthcare Technologies Inc.",
+    "price": 0.22,
+    "change": -16.74,
+    "market_cap": "2.08M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "IMCC",
+    "name": "IM Cannabis Corp.",
+    "price": 0.45,
+    "change": -15.98,
+    "market_cap": "874.50K",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "ZNB",
+    "name": "Zeta Network Group",
+    "price": 0.39,
+    "change": -15.65,
+    "market_cap": "1.94M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "ATXG",
+    "name": "Addentax Group Corp.",
+    "price": 2.86,
+    "change": 15.43,
+    "market_cap": "2.94M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "SCLX",
+    "name": "Scilex Holding Company",
+    "price": 0.72,
+    "change": 14.51,
+    "market_cap": "4.69M",
+    "type": "gainer",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "NOMA",
+    "name": "Nomadar Corp.",
+    "price": 1.05,
+    "change": -13.93,
+    "market_cap": "20.45M",
+    "type": "loser",
+    "catalyst": "Technical overnight price discovery / standard volume play."
+  },
+  {
+    "ticker": "AZIO",
+    "name": "Azio AI Holdings, Inc.",
     "price": 0.5,
-    "change": -29.25,
-    "market_cap": "9.12M",
-    "type": "loser",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "BYAH",
-    "name": "Park Ha Biological Technology Co., Ltd.",
-    "price": 1.16,
-    "change": -26.12,
-    "market_cap": "4.14M",
-    "type": "loser",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "BMGL",
-    "name": "Basel Medical Group Ltd",
-    "price": 0.4,
-    "change": 23.02,
-    "market_cap": "4.89M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "AKAN",
-    "name": "Akanda Corp.",
-    "price": 2.42,
-    "change": 17.99,
-    "market_cap": "9.45M",
-    "type": "gainer",
-    "catalyst": "Technical Momentum / Micro-cap order book volume spike (No explicit news filed)."
-  },
-  {
-    "ticker": "SAEN",
-    "name": "Genenta Science S.p.A.",
-    "price": 0.68,
-    "change": 17.85,
-    "market_cap": "27.99M",
+    "change": 13.61,
+    "market_cap": "7.49M",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "NWTG",
-    "name": "Newton Golf Company, Inc.",
-    "price": 0.83,
-    "change": 17.69,
-    "market_cap": "4.30M",
+    "ticker": "FTH",
+    "name": "Faeth Therapeutics, Inc.",
+    "price": 9.9,
+    "change": 13.53,
+    "market_cap": "227.81M",
     "type": "gainer",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "BGDE",
-    "name": "Big Digital Energy, Inc.",
-    "price": 2.98,
-    "change": 16.86,
-    "market_cap": "17.33M",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "AZR",
-    "name": "Azora Therapeutics, Inc.",
-    "price": 3.11,
-    "change": -15.14,
-    "market_cap": "54.93M",
+    "ticker": "DXST",
+    "name": "Decent Holding Inc.",
+    "price": 0.69,
+    "change": -12.55,
+    "market_cap": "1.85M",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "FOXX",
-    "name": "Foxx Development Holdings Inc.",
-    "price": 1.35,
-    "change": 15.01,
-    "market_cap": "8.41M",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "FGL",
-    "name": "Founder Group Limited",
-    "price": 0.61,
-    "change": -14.99,
-    "market_cap": "6.00K",
+    "ticker": "NXAT",
+    "name": "Nexus Advanced Technologies Inc.",
+    "price": 0.27,
+    "change": -12.34,
+    "market_cap": "739.76K",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   },
   {
-    "ticker": "ARDT",
-    "name": "Ardent Health, Inc.",
-    "price": 15.1,
-    "change": -14.93,
-    "market_cap": "2.00B",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "MTEK",
-    "name": "Maris-Tech Ltd.",
-    "price": 0.28,
-    "change": 13.69,
-    "market_cap": "2.64M",
-    "type": "gainer",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "CSAI",
-    "name": "Cloudastructure Inc.",
-    "price": 0.85,
-    "change": -12.52,
-    "market_cap": "659.45K",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "CRMN",
-    "name": "Skyline Builders Group Holding Limited",
-    "price": 0.85,
-    "change": -12.46,
-    "market_cap": "16.59M",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "GHRS",
-    "name": "GH Research PLC",
-    "price": 16.02,
-    "change": -12.32,
-    "market_cap": "1.26B",
-    "type": "loser",
-    "catalyst": "Technical overnight price discovery / standard volume play."
-  },
-  {
-    "ticker": "XRTX",
-    "name": "XORTX Therapeutics Inc.",
-    "price": 0.93,
-    "change": -12.16,
-    "market_cap": "1.89M",
+    "ticker": "YFOR",
+    "name": "YYForce Inc.",
+    "price": 0.02,
+    "change": -12.27,
+    "market_cap": "7.60M",
     "type": "loser",
     "catalyst": "Technical overnight price discovery / standard volume play."
   }
